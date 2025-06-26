@@ -9,44 +9,50 @@ const Home = () => {
       icon: Code,
       title: 'Website Development',
       nepali: 'वेबसाइट विकास',
-      description: 'Custom websites that grow your business and engage your customers effectively.'
+      description: 'Custom websites that grow your business and engage your customers effectively.',
+      color: 'from-blue-500 to-blue-600'
     },
     {
       icon: Users,
       title: 'IT Assignment Solutions',
       nepali: 'आईटी समाधान',
-      description: 'Comprehensive IT support and assignment help for students and professionals.'
+      description: 'Comprehensive IT support and assignment help for students and professionals.',
+      color: 'from-green-500 to-green-600'
     },
     {
       icon: Globe,
       title: 'Digital Transformation',
       nepali: 'डिजिटल रूपान्तरण',
-      description: 'Modernize your business with cutting-edge digital solutions and strategies.'
+      description: 'Modernize your business with cutting-edge digital solutions and strategies.',
+      color: 'from-red-500 to-red-600'
     }
   ];
 
   const stats = [
-    { number: '50+', label: 'Happy Clients', nepali: 'खुसी ग्राहकहरू' },
-    { number: '100+', label: 'Projects Completed', nepali: 'सम्पन्न परियोजनाहरू' },
-    { number: '3+', label: 'Years Experience', nepali: 'वर्षको अनुभव' },
-    { number: '24/7', label: 'Support Available', nepali: 'सहयोग उपलब्ध' }
+    { number: '50+', label: 'Happy Clients', nepali: 'खुसी ग्राहकहरू', color: 'text-blue-600' },
+    { number: '100+', label: 'Projects Completed', nepali: 'सम्पन्न परियोजनाहरू', color: 'text-green-600' },
+    { number: '3+', label: 'Years Experience', nepali: 'वर्षको अनुभव', color: 'text-red-600' },
+    { number: '24/7', label: 'Support Available', nepali: 'सहयोग उपलब्ध', color: 'text-blue-600' }
   ];
 
   const whyChooseUs = [
     {
       icon: Zap,
       title: 'Lightning Fast',
-      description: 'Quick turnaround times without compromising on quality.'
+      description: 'Quick turnaround times without compromising on quality.',
+      color: 'from-red-500 to-red-600'
     },
     {
       icon: Shield,
       title: 'Reliable & Secure',
-      description: 'Your projects are safe with our proven security measures.'
+      description: 'Your projects are safe with our proven security measures.',
+      color: 'from-green-500 to-green-600'
     },
     {
       icon: Award,
       title: 'Quality Focused',
-      description: 'We prioritize quality over quantity in every project.'
+      description: 'We prioritize quality over quantity in every project.',
+      color: 'from-blue-500 to-blue-600'
     }
   ];
 
@@ -62,6 +68,7 @@ const Home = () => {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-blue-800/80 to-gray-900/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-900/10 to-red-900/10"></div>
         </div>
 
         {/* Content */}
@@ -79,7 +86,7 @@ const Home = () => {
               className="text-5xl md:text-7xl font-bold text-white leading-tight"
             >
               Empowering
-              <span className="bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent block">
+              <span className="bg-gradient-to-r from-blue-400 via-green-400 to-red-400 bg-clip-text text-transparent block">
                 Nepali Businesses
               </span>
             </motion.h1>
@@ -91,7 +98,7 @@ const Home = () => {
               className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed"
             >
               We create stunning websites and provide IT solutions that help local businesses thrive in the digital world.
-              <span className="block mt-2 text-lg text-blue-200">
+              <span className="block mt-2 text-lg text-green-200">
                 स्थानीय व्यवसायहरूलाई डिजिटल संसारमा सफल बनाउँदै।
               </span>
             </motion.p>
@@ -106,7 +113,7 @@ const Home = () => {
                 <motion.button
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center space-x-2"
+                  className="bg-gradient-to-r from-red-500 to-red-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center space-x-2"
                 >
                   <span>Start Your Project</span>
                   <ArrowRight size={20} />
@@ -117,7 +124,7 @@ const Home = () => {
                 <motion.button
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300"
+                  className="border-2 border-green-400 text-green-400 px-8 py-4 rounded-full font-semibold text-lg hover:bg-green-400 hover:text-white transition-all duration-300"
                 >
                   View Our Work
                 </motion.button>
@@ -136,15 +143,15 @@ const Home = () => {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-6 h-10 border-2 border-white rounded-full flex justify-center"
+            className="w-6 h-10 border-2 border-green-400 rounded-full flex justify-center"
           >
-            <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
+            <div className="w-1 h-3 bg-green-400 rounded-full mt-2"></div>
           </motion.div>
         </motion.div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-50 to-blue-100">
+      <section className="py-20 bg-gradient-to-r from-blue-50 via-green-50 to-red-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -155,7 +162,7 @@ const Home = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">
+                <div className={`text-4xl md:text-5xl font-bold ${stat.color} mb-2`}>
                   {stat.number}
                 </div>
                 <div className="text-gray-700 font-medium">{stat.label}</div>
@@ -195,13 +202,13 @@ const Home = () => {
                   whileHover={{ y: -10, scale: 1.02 }}
                   className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-xl flex items-center justify-center mb-6`}>
                     <Icon className="text-white" size={28} />
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-blue-600 mb-4 font-medium">
+                  <p className="text-sm text-gray-600 mb-4 font-medium">
                     {feature.nepali}
                   </p>
                   <p className="text-gray-600 leading-relaxed">
@@ -242,7 +249,7 @@ const Home = () => {
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   className="text-center"
                 >
-                  <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className={`w-20 h-20 bg-gradient-to-r ${item.color} rounded-full flex items-center justify-center mx-auto mb-6`}>
                     <Icon className="text-white" size={32} />
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -259,7 +266,7 @@ const Home = () => {
       </section>
 
       {/* Supporting Local Business Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-r from-green-600 via-green-700 to-green-800 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <img
             src="https://images.unsplash.com/photo-1660629512606-184b75cc86fc"
@@ -277,12 +284,12 @@ const Home = () => {
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Supporting Local Nepali Businesses
-              <span className="block text-2xl md:text-3xl mt-4 text-blue-200">
+              <span className="block text-2xl md:text-3xl mt-4 text-green-200">
                 स्थानीय नेपाली व्यवसायहरूलाई समर्थन गर्दै
               </span>
             </h2>
             
-            <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-green-100 max-w-4xl mx-auto leading-relaxed">
               We believe in the power of local entrepreneurship. Our mission is to digitally transform 
               Nepali businesses, helping them compete globally while staying rooted in their community values.
             </p>
@@ -292,10 +299,10 @@ const Home = () => {
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8"
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-green-400/20"
               >
                 <h3 className="text-2xl font-bold mb-4">Local Market Understanding</h3>
-                <p className="text-blue-100">
+                <p className="text-green-100">
                   Deep understanding of Nepali market dynamics, customer behavior, and cultural preferences.
                 </p>
               </motion.div>
@@ -304,10 +311,10 @@ const Home = () => {
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8"
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-green-400/20"
               >
                 <h3 className="text-2xl font-bold mb-4">Affordable Solutions</h3>
-                <p className="text-blue-100">
+                <p className="text-green-100">
                   Quality digital solutions at prices that make sense for growing Nepali businesses.
                 </p>
               </motion.div>
@@ -320,7 +327,7 @@ const Home = () => {
               className="mt-12"
             >
               <Link to="/contact">
-                <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                <button className="bg-gradient-to-r from-red-500 to-red-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                   Let's Grow Together
                 </button>
               </Link>
@@ -358,7 +365,7 @@ const Home = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-600 hover:text-white transition-all duration-300"
+                  className="border-2 border-green-600 text-green-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-green-600 hover:text-white transition-all duration-300"
                 >
                   View Portfolio
                 </motion.button>

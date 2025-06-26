@@ -39,7 +39,7 @@ const Navbar = () => {
           <Link to="/" className="flex items-center space-x-2">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent"
+              className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-green-600 to-red-600 bg-clip-text text-transparent"
             >
               CampaHills Technologies
             </motion.div>
@@ -60,7 +60,7 @@ const Navbar = () => {
                       ? 'text-blue-600'
                       : scrolled
                       ? 'text-gray-700 hover:text-blue-600'
-                      : 'text-white hover:text-blue-300'
+                      : 'text-white hover:text-green-300'
                   }`}
                 >
                   {item.name}
@@ -69,7 +69,7 @@ const Navbar = () => {
                 {location.pathname === item.path && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-600"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 via-green-500 to-red-500"
                   />
                 )}
               </Link>
@@ -78,7 +78,7 @@ const Navbar = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-2 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Get Started
             </motion.button>
@@ -87,7 +87,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-blue-50 transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-green-50 transition-colors"
           >
             {isOpen ? (
               <X className={scrolled ? 'text-gray-700' : 'text-white'} size={24} />
@@ -116,13 +116,13 @@ const Navbar = () => {
                   className={`block px-4 py-3 rounded-lg transition-colors ${
                     location.pathname === item.path
                       ? 'bg-blue-50 text-blue-600'
-                      : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600'
+                      : 'text-gray-700 hover:bg-green-50 hover:text-green-600'
                   }`}
                 >
                   {item.name} <span className="text-xs opacity-70">{item.nepali}</span>
                 </Link>
               ))}
-              <button className="w-full mt-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-lg font-medium">
+              <button className="w-full mt-4 bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-3 rounded-lg font-medium">
                 Get Started
               </button>
             </div>

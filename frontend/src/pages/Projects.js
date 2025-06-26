@@ -7,10 +7,10 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const categories = [
-    { id: 'all', name: 'All Projects', nepali: 'सबै परियोजनाहरू' },
-    { id: 'website', name: 'Websites', nepali: 'वेबसाइटहरू' },
-    { id: 'ecommerce', name: 'E-commerce', nepali: 'ई-कमर्स' },
-    { id: 'assignment', name: 'IT Solutions', nepali: 'आईटी समाधान' }
+    { id: 'all', name: 'All Projects', nepali: 'सबै परियोजनाहरू', color: 'bg-blue-600' },
+    { id: 'website', name: 'Websites', nepali: 'वेबसाइटहरू', color: 'bg-green-600' },
+    { id: 'ecommerce', name: 'E-commerce', nepali: 'ई-कमर्स', color: 'bg-red-600' },
+    { id: 'assignment', name: 'IT Solutions', nepali: 'आईटी समाधान', color: 'bg-blue-600' }
   ];
 
   const projects = [
@@ -28,6 +28,7 @@ const Projects = () => {
       duration: '3 months',
       year: '2024',
       status: 'Live',
+      statusColor: 'bg-green-100 text-green-700',
       demoUrl: '#',
       githubUrl: '#'
     },
@@ -45,6 +46,7 @@ const Projects = () => {
       duration: '4 months',
       year: '2024',
       status: 'Development',
+      statusColor: 'bg-yellow-100 text-yellow-700',
       demoUrl: '#',
       githubUrl: '#'
     },
@@ -62,6 +64,7 @@ const Projects = () => {
       duration: '2 months',
       year: '2024',
       status: 'Live',
+      statusColor: 'bg-green-100 text-green-700',
       demoUrl: '#',
       githubUrl: '#'
     },
@@ -79,6 +82,7 @@ const Projects = () => {
       duration: '3 months',
       year: '2023',
       status: 'Live',
+      statusColor: 'bg-green-100 text-green-700',
       demoUrl: '#',
       githubUrl: '#'
     },
@@ -96,6 +100,7 @@ const Projects = () => {
       duration: '2 months',
       year: '2023',
       status: 'Live',
+      statusColor: 'bg-green-100 text-green-700',
       demoUrl: '#',
       githubUrl: '#'
     },
@@ -113,6 +118,7 @@ const Projects = () => {
       duration: '5 months',
       year: '2024',
       status: 'Development',
+      statusColor: 'bg-red-100 text-red-700',
       demoUrl: '#',
       githubUrl: '#'
     }
@@ -125,7 +131,7 @@ const Projects = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-50">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-green-50 to-red-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -135,7 +141,7 @@ const Projects = () => {
           >
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
               Our
-              <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent block">
+              <span className="bg-gradient-to-r from-blue-600 via-green-600 to-red-600 bg-clip-text text-transparent block">
                 Projects Portfolio
               </span>
             </h1>
@@ -160,6 +166,10 @@ const Projects = () => {
                     <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                     <span>In Development</span>
                   </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <span>Planning</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -179,8 +189,8 @@ const Projects = () => {
                 whileTap={{ scale: 0.95 }}
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                   selectedCategory === category.id
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-600'
+                    ? `${category.color} text-white shadow-lg`
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
                 <div className="flex items-center space-x-2">
@@ -220,11 +230,7 @@ const Projects = () => {
                       className="w-full h-48 object-cover transform hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute top-4 right-4">
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                        project.status === 'Live' 
-                          ? 'bg-green-100 text-green-700' 
-                          : 'bg-yellow-100 text-yellow-700'
-                      }`}>
+                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${project.statusColor}`}>
                         {project.status}
                       </span>
                     </div>
@@ -238,7 +244,7 @@ const Projects = () => {
                       <span className="text-sm text-gray-500">{project.year}</span>
                     </div>
                     
-                    <p className="text-sm text-blue-600 font-medium mb-3">
+                    <p className="text-sm text-gray-600 mb-3 font-medium">
                       {project.nepali}
                     </p>
                     
@@ -264,7 +270,7 @@ const Projects = () => {
                     
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-gray-500">{project.client}</span>
-                      <div className="flex items-center text-blue-600">
+                      <div className="flex items-center text-green-600">
                         <span className="text-sm mr-2">View Details</span>
                         <ArrowRight size={16} />
                       </div>
@@ -307,11 +313,7 @@ const Projects = () => {
                   <X size={20} />
                 </button>
                 <div className="absolute bottom-4 left-4">
-                  <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                    selectedProject.status === 'Live' 
-                      ? 'bg-green-100 text-green-700' 
-                      : 'bg-yellow-100 text-yellow-700'
-                  }`}>
+                  <span className={`px-3 py-1 rounded-full text-sm font-medium ${selectedProject.statusColor}`}>
                     {selectedProject.status}
                   </span>
                 </div>
@@ -323,7 +325,7 @@ const Projects = () => {
                     <h2 className="text-3xl font-bold text-gray-900 mb-2">
                       {selectedProject.title}
                     </h2>
-                    <p className="text-blue-600 font-medium mb-4">
+                    <p className="text-gray-600 font-medium mb-4">
                       {selectedProject.nepali}
                     </p>
                     <p className="text-gray-600 leading-relaxed mb-6">
@@ -334,7 +336,7 @@ const Projects = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
                       {selectedProject.features.map((feature, index) => (
                         <div key={index} className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                          <div className="w-2 h-2 bg-green-600 rounded-full"></div>
                           <span className="text-gray-700">{feature}</span>
                         </div>
                       ))}
@@ -350,7 +352,7 @@ const Projects = () => {
                       </a>
                       <a
                         href={selectedProject.githubUrl}
-                        className="flex items-center space-x-2 border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors"
+                        className="flex items-center space-x-2 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors"
                       >
                         <Github size={18} />
                         <span>View Code</span>
@@ -380,7 +382,7 @@ const Projects = () => {
                         {selectedProject.technologies.map((tech, index) => (
                           <span
                             key={index}
-                            className="px-3 py-1 bg-blue-50 text-blue-600 text-sm rounded-full"
+                            className="px-3 py-1 bg-red-50 text-red-600 text-sm rounded-full"
                           >
                             {tech}
                           </span>
@@ -396,7 +398,7 @@ const Projects = () => {
       </AnimatePresence>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="py-20 bg-gradient-to-r from-red-600 via-red-700 to-red-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -407,13 +409,13 @@ const Projects = () => {
             <h2 className="text-4xl md:text-5xl font-bold">
               Ready to Start Your Project?
             </h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <p className="text-xl text-red-100 max-w-3xl mx-auto">
               Let's create something amazing together. Contact us to discuss your project requirements.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300"
+              className="bg-white text-red-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300"
             >
               Get Started Today
             </motion.button>

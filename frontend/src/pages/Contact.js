@@ -40,7 +40,8 @@ const Contact = () => {
       nepali: 'इमेल गर्नुहोस्',
       primary: 'info@campahills.com',
       secondary: 'support@campahills.com',
-      description: 'Send us an email anytime!'
+      description: 'Send us an email anytime!',
+      color: 'from-blue-500 to-blue-600'
     },
     {
       icon: Phone,
@@ -48,7 +49,8 @@ const Contact = () => {
       nepali: 'फोन गर्नुहोस्',
       primary: '+977 9800000000',
       secondary: '+977 9811111111',
-      description: 'Available 9 AM - 6 PM (NPT)'
+      description: 'Available 9 AM - 6 PM (NPT)',
+      color: 'from-green-500 to-green-600'
     },
     {
       icon: MapPin,
@@ -56,7 +58,8 @@ const Contact = () => {
       nepali: 'भेट्न आउनुहोस्',
       primary: 'Kathmandu, Nepal',
       secondary: 'Bagmati Province',
-      description: 'Come say hello at our office!'
+      description: 'Come say hello at our office!',
+      color: 'from-red-500 to-red-600'
     },
     {
       icon: Clock,
@@ -64,7 +67,8 @@ const Contact = () => {
       nepali: 'काम गर्ने समय',
       primary: 'Mon - Fri: 9 AM - 6 PM',
       secondary: 'Sat: 10 AM - 4 PM',
-      description: 'Sunday: Closed'
+      description: 'Sunday: Closed',
+      color: 'from-blue-500 to-blue-600'
     }
   ];
 
@@ -102,7 +106,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-red-600 via-red-700 to-red-800 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <img
             src="https://images.unsplash.com/photo-1573164574230-db1d5e960238"
@@ -120,14 +124,14 @@ const Contact = () => {
           >
             <h1 className="text-5xl md:text-6xl font-bold leading-tight">
               Let's Build Something
-              <span className="block text-blue-200">Amazing Together</span>
+              <span className="block bg-gradient-to-r from-green-200 to-blue-200 bg-clip-text text-transparent">Amazing Together</span>
             </h1>
             
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-red-100 max-w-3xl mx-auto leading-relaxed">
               Ready to transform your business ideas into digital reality? We're here to help you every step of the way.
             </p>
             
-            <p className="text-lg text-blue-200 font-medium">
+            <p className="text-lg text-red-200 font-medium">
               हामीसँग सम्पर्क राख्नुहोस् र आफ्नो सपनाको परियोजना सुरु गर्नुहोस्
             </p>
             
@@ -137,7 +141,7 @@ const Contact = () => {
                 transition={{ duration: 2, repeat: Infinity }}
                 className="bg-white/10 backdrop-blur-sm rounded-full p-4"
               >
-                <MessageCircle size={32} className="text-blue-200" />
+                <MessageCircle size={32} className="text-red-200" />
               </motion.div>
             </div>
           </motion.div>
@@ -171,16 +175,16 @@ const Contact = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ y: -10, scale: 1.02 }}
-                  className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300"
+                  className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className={`w-20 h-20 bg-gradient-to-r ${item.color} rounded-full flex items-center justify-center mx-auto mb-6`}>
                     <Icon className="text-white" size={32} />
                   </div>
                   
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-blue-600 font-medium mb-4">
+                  <p className="text-sm text-gray-600 font-medium mb-4">
                     {item.nepali}
                   </p>
                   
@@ -198,7 +202,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-green-50 to-red-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Form Info */}
@@ -230,8 +234,8 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                    <CheckCircle className="text-blue-600" size={24} />
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                    <CheckCircle className="text-green-600" size={24} />
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Custom Quote</h4>
@@ -240,8 +244,8 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                    <CheckCircle className="text-blue-600" size={24} />
+                  <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                    <CheckCircle className="text-red-600" size={24} />
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Dedicated Support</h4>
@@ -250,7 +254,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="bg-blue-600 rounded-2xl p-6 text-white">
+              <div className="bg-gradient-to-r from-blue-600 to-green-600 rounded-2xl p-6 text-white">
                 <h3 className="text-xl font-bold mb-2">Quick Response Promise</h3>
                 <p className="text-blue-100">
                   We respond to all inquiries within 24 hours. For urgent projects, 
@@ -299,7 +303,7 @@ const Contact = () => {
                           value={formData.email}
                           onChange={handleInputChange}
                           required
-                          className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                          className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300"
                           placeholder="your@email.com"
                         />
                       </div>
@@ -318,7 +322,7 @@ const Contact = () => {
                           name="company"
                           value={formData.company}
                           onChange={handleInputChange}
-                          className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                          className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-300"
                           placeholder="Your company name"
                         />
                       </div>
@@ -351,7 +355,7 @@ const Contact = () => {
                       value={formData.service}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300"
                     >
                       <option value="">Select a service</option>
                       {services.map((service, index) => (
@@ -370,7 +374,7 @@ const Contact = () => {
                       name="budget"
                       value={formData.budget}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-300"
                     >
                       <option value="">Select budget range</option>
                       {budgetRanges.map((range, index) => (
@@ -404,7 +408,7 @@ const Contact = () => {
                     className={`w-full py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center space-x-2 ${
                       isSubmitting
                         ? 'bg-gray-400 cursor-not-allowed'
-                        : 'bg-gradient-to-r from-blue-600 to-blue-700 hover:shadow-lg text-white'
+                        : 'bg-gradient-to-r from-red-600 to-red-700 hover:shadow-lg text-white'
                     }`}
                   >
                     {isSubmitting ? (
@@ -435,7 +439,7 @@ const Contact = () => {
                   <p className="text-gray-600 mb-6">
                     Thank you for reaching out. We'll get back to you within 24 hours with a detailed response.
                   </p>
-                  <p className="text-sm text-blue-600 font-medium">
+                  <p className="text-sm text-green-600 font-medium">
                     सन्देश सफलतापूर्वक पठाइएको छ। हामी चाँडै सम्पर्कमा आउनेछौं।
                   </p>
                 </motion.div>
@@ -466,19 +470,23 @@ const Contact = () => {
             {[
               {
                 question: "How long does a typical website project take?",
-                answer: "Most websites take 2-6 weeks depending on complexity. We provide detailed timelines during our initial consultation."
+                answer: "Most websites take 2-6 weeks depending on complexity. We provide detailed timelines during our initial consultation.",
+                color: "border-l-blue-500"
               },
               {
                 question: "Do you provide ongoing support after project completion?",
-                answer: "Yes! We offer ongoing maintenance, updates, and support packages to keep your website running smoothly."
+                answer: "Yes! We offer ongoing maintenance, updates, and support packages to keep your website running smoothly.",
+                color: "border-l-green-500"
               },
               {
                 question: "Can you help with existing websites?",
-                answer: "Absolutely! We can redesign, optimize, or add new features to existing websites and applications."
+                answer: "Absolutely! We can redesign, optimize, or add new features to existing websites and applications.",
+                color: "border-l-red-500"
               },
               {
                 question: "What makes CampaHills different from other developers?",
-                answer: "We focus on quality over quantity, understand the local Nepali market, and provide personalized attention to each client."
+                answer: "We focus on quality over quantity, understand the local Nepali market, and provide personalized attention to each client.",
+                color: "border-l-blue-500"
               }
             ].map((faq, index) => (
               <motion.div
@@ -486,7 +494,7 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gray-50 rounded-lg p-6"
+                className={`bg-gray-50 rounded-lg p-6 border-l-4 ${faq.color}`}
               >
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">
                   {faq.question}
